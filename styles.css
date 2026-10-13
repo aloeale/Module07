@@ -1,0 +1,526 @@
+/* Apply border-box sizing so padding and borders are included
+   in the total width and height of elements. */
+* {
+    box-sizing: border-box;
+}
+
+/* Make links to page sections scroll smoothly instead of jumping. */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Set the default font, text color, background, and spacing for the page. */
+body {
+    margin: 0;
+    background-color: #FAF8F2;
+    color: #171717;
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.6;
+}
+
+/* Keep images inside their containers and remove extra inline spacing. */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Use the surrounding text color for links and remove the default underline. */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/*TYPOGRAPHY*/
+
+/* Use the display font for headings to give the page a bold,
+   consistent look that matches the restaurant's visual style. */
+h1, h2, h3 {
+    margin-top: 0;
+    font-family: "Bebas Neue", sans-serif;
+    line-height: 0.95;
+}
+
+/* Set different heading sizes to create a clear visual hierarchy. */
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+/* Small uppercase labels used above section headings.
+   Letter spacing helps them stand out from the main text. */
+.eyebrow {
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+
+/* HEADER / NAVIGATION */
+
+/* Use Flexbox to place the logo and navigation on opposite sides
+   and keep them vertically aligned. */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 1.5rem 8%;
+}
+
+/* Use the same font for the header and footer logos. */
+.logo, .footer-logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.08em;
+}
+
+/* Display navigation links in a row with space between them.
+   Remove the default list spacing and bullet points. */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* increase navigation size. */
+.nav-links a {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Change the link color when a visitor hovers over it. */
+.nav-links a:hover {
+    color: #E53935;
+}
+
+
+/* Mobile menu elements */
+
+/* Hide the hamburger icon on larger screens because the full
+   navigation links are already visible. */
+.menu-icon {
+    display: none;
+}
+
+/* Keep the checkbox available for keyboard interaction while
+   making it visually hidden. It controls the mobile menu. */
+#menu-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+/* Show a visible outline when keyboard users focus on the menu toggle. */
+#menu-toggle:focus-visible + .menu-icon {
+    outline: 3px solid #E53935;
+    outline-offset: 5px;
+}
+
+
+/* HERO */
+
+/* Use Flexbox to vertically center the hero text.
+   The background pizza is oversized and shifted right so part
+   of it extends beyond the edge of the section. */
+.hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 5rem 8%;
+    overflow: hidden;
+
+    /* Set the background color behind the pizza image. */
+    background-color: #FAF8F2;
+
+    /* Prevent the pizza image from repeating. */
+    background-repeat: no-repeat;
+
+    /* Position and size the pizza to create the cropped hero effect. */
+    background-position: 165% center;
+    background-size: 65% auto;
+
+    /* Use a background image so the text can sit on top of it. */
+    background-image: url("images/Full%20Pizza.png");
+}
+
+/* Keep the hero text above the background image and limit its width
+   so the text doesn't stretch too far across the page. */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 750px;
+}
+
+/* Use clamp() so the main heading scales with the screen size
+   but does not become too small or too large. */
+.hero h1 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(4rem, 8vw, 7rem);
+}
+
+/* Limit the paragraph width to keep the lines readable. */
+.hero-text {
+    max-width: 450px;
+    margin-bottom: 2rem;
+}
+
+
+/* BUTTONS */
+
+/* Shared button styling keeps calls to action consistent across the page. */
+.button {
+    display: inline-block;
+    padding: 0.9rem 1.5rem;
+    background-color: #2455C3;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+/* Use red as the hover color to make interactive buttons noticeable. */
+.button:hover {
+    background-color: #E53935;
+}
+
+/* Alternate button style for use on darker backgrounds. */
+.button-light {
+    background-color: #F7D95E;
+    color: #171717;
+}
+
+
+/* OUR STORY */
+
+/* Use a two-column grid so the restaurant photo and story text
+   sit next to each other on larger screens. */
+.story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+}
+
+/* Fill the image column and crop the photo to fit without
+   stretching it out of proportion. */
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Give the story text more space and use blue as background color to contrast with the light page. */
+.story-content {
+    padding: 6rem;
+    background-color: #2455C3;
+    color: #FFFFFF;
+}
+
+/* Add space below the story heading before the paragraph text. */
+.story-content h2 {
+    margin-bottom: 2rem;
+}
+
+
+/* FAVORITES / MENU */
+
+/* Keep the menu section from becoming too wide on large screens
+   and center it within the page. */
+.menu-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 7rem 4%;
+}
+
+/* Add space between the section heading and the food cards. */
+.section-heading {
+    margin-bottom: 4rem;
+}
+
+/* Remove the extra bottom margin so the heading spacing is controlled
+   by the section layout instead. */
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+/* Use a three-column grid for the featured dishes on desktop.
+   The media query below changes this to one column on mobile. */
+.favorite-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Hide anything that extends outside the card's rounded edges. */
+.favorite-card {
+    overflow: hidden;
+}
+
+/* Light card style with a dark border. */
+.favorite-card-light {
+    background-color: #FAF8F2;
+    border: 2px solid #171717;
+    border-radius: 0.75rem;
+}
+
+/* Blue card adds contrast between the featured dishes. */
+.favorite-card-blue {
+    background-color: #2455C3;
+    color: #FFFFFF;
+    border-radius: 0.75rem;
+}
+
+/* Give each food image a consistent height and crop it to fit. */
+.favorite-image {
+    height: 280px;
+    overflow: hidden;
+}
+
+/* Make the food photos fill their image containers.
+   The saturation filter gives the colors a slight boost. */
+.favorite-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    filter: saturate(1.1);
+}
+
+/* Add spacing around the name and description of each dish. */
+.favorite-content {
+    padding: 2rem;
+}
+
+/* Style the numbered labels to match the heading font. */
+.menu-number {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+}
+
+/* Use red numbers on light cards. */
+.favorite-card-light .menu-number {
+    color: #E53935;
+}
+
+/* Use yellow numbers on the blue card for contrast. */
+.favorite-card-blue .menu-number {
+    color: #F7D95E;
+}
+
+/* Add a little space between each dish name and its description. */
+.favorite-content h3 {
+    margin-bottom: 0.75rem;
+}
+
+/* Remove the paragraph's bottom margin inside each card. */
+.favorite-content p {
+    margin-bottom: 0;
+}
+
+
+/* VISIT */
+
+/* Use a full-width blue section to make the final cta
+   stand out from the menu above it. */
+.visit-section {
+    padding: 7rem 2rem;
+    background-color: #2455C3;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/* Limit the width of the visit content and center it on the page. */
+.visit-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Make the closing heading large and responsive. */
+.visit-section h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(4rem, 8vw, 7rem);
+}
+
+
+/* FOOTER */
+
+/* Use a dark footer to create a clear ending to the page. */
+.site-footer {
+    padding: 3rem 2rem;
+    background-color: #171717;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/* Center footer links in a row and space them evenly on desktop. */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Change footer link color when visitors hover over them. */
+.footer-links a:hover {
+    color: #F7D95E;
+}
+
+/* Make the copyright text smaller than the main footer content. */
+.copyright {
+    font-size: 0.8rem;
+}
+
+
+/* ACCESSIBILITY */
+
+/* Add a visible outline when visitors navigate links with a keyboard.
+   This makes it easier to see which link is currently selected. */
+a:focus-visible {
+    outline: 3px solid #E53935;
+    outline-offset: 4px;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+/* Apply these changes on screens 768px wide or smaller,
+   such as phones and many tablets. */
+@media (max-width: 768px) {
+
+    /* Reduce the header spacing to fit smaller screens. */
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    /* Show the hamburger icon on mobile and stack its three lines. */
+    .menu-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    /* Style the three lines that make up the hamburger icon. */
+    .menu-icon span:not(.sr-only) {
+        width: 25px;
+        height: 3px;
+        background-color: #171717;
+    }
+
+    /* Hide the navigation links until the checkbox is checked.
+       Position the menu across the width of the screen. */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background-color: #FAF8F2;
+        padding: 1rem 1.5rem;
+        z-index: 10;
+    }
+
+    /* The general sibling selector shows the menu when the checkbox
+       is checked. */
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* Add space and dividers between the mobile menu links. */
+    .nav-links li {
+        padding: 1rem 0;
+        border-bottom: 1px solid #171717;
+    }
+
+
+    /* Adjust the hero for smaller screens. */
+    .hero {
+        min-height: 90vh;
+        align-items: flex-start;
+        padding: 1rem 1.5rem;
+
+        background-size: 90% auto;
+        background-position: 480% 90%;
+    }
+
+    /* Make the main heading larger relative to the narrow screen width. */
+    .hero h1 {
+        font-size: clamp(4rem, 18vw, 6rem);
+    }
+
+    /* Let the hero paragraph use most of the available width. */
+    .hero-text {
+        max-width: 90%;
+    }
+
+
+    /* Stack the photo and story text vertically instead of side by side. */
+    .story {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduce the story padding so the text fits comfortably on mobile. */
+    .story-content {
+        padding: 4rem 1.5rem;
+    }
+
+
+    /* Reduce the menu section spacing on smaller screens. */
+    .menu-section {
+        padding: 5rem 1.5rem;
+    }
+
+    /* Stack the food cards vertically so they are easier to view on phones. */
+    .favorite-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Make the food images a little taller in the single-column layout. */
+    .favorite-image {
+        height: 300px;
+    }
+
+
+    /* Reduce the padding around the final cta section. */
+    .visit-section {
+        padding: 5rem 1.5rem;
+    }
+
+
+    /* Stack footer links vertically on mobile. */
+    .footer-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+
+/* Hide text visually while keeping it available to screen readers.
+   This is used for the accessible label on the mobile menu icon. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

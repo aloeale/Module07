@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set character encoding and make the layout responsive on mobile devices. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- short description of the restaurant for search engines. -->
+    <meta name="description" content="Welcome to Luigi's Italian Restaurant, where we serve authentic Italian cuisine with a modern twist.">
+
+    <title>Luigi's Italian Restaurant</title>
+
+    <!-- load Google Fonts: Bebas Neue for headings and DM Sans for body text. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- link the external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- header contains the restaurant logo and site navigation. -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+
+            <!-- logo links back to the top of the homepage -->
+            <a href="#home" class="logo">LUIGI'S</a>
+
+            <!-- checkbox controls whether the mobile navigation is displayed -->
+            <input type="checkbox" id="menu-toggle" aria-label="Toggle navigation menu">
+
+            <!-- clicking the hamburger icon toggles the checkbox above -->
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <!-- screen readers can use this text to identify the menu control -->
+                <span class="sr-only">Toggle navigation menu</span>
+            </label>
+
+            <!-- Navigation links jump to sections within the same page since there's no other pages -->
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#visit">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- hero section introduces the restaurant with headline. -->
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+                <p class="eyebrow">ITALIAN PIZZA • PASTA • GOOD TIMES</p>
+
+                <!-- the h1 is the page's main heading. Line breaks control its visual layout -->
+                <h1>Italian Food<br>For the<br>Everyday.</h1>
+
+                <p class="hero-text">
+                    Fresh pizza, handmade pasta, and familiar favorites made for sharing.
+                    Luigi's is your neighborhood spot for an easy dinner, a long table,
+                    and something good to eat.
+                </p>
+
+                <!-- primary cta directs visitors to the menu section. -->
+                <a href="#menu" class="button">View the Menu →</a>
+            </div>
+
+        </section>
+
+        <section id="story" class="story">
+
+            <div class="story-image">
+                <!-- Photo: Daniel Mironov, Unsplash. Full source below -->
+                <img src="images/restaurant.jpg"
+                     alt="Inside of Luigi's Italian Restaurant">
+            </div>
+
+            <div class="story-content">
+                <p class="eyebrow">OUR STORY</p>
+
+                <h2>Made for<br>the neighborhood.</h2>
+
+                <p>
+                    Luigi's is your local spot for good pizza, fresh pasta,
+                    and meals worth sharing. Come by for dinner, grab a slice,
+                    or stay awhile.
+                </p>
+
+                <a href="#visit" class="button button-light">Come say hello →</a>
+            </div>
+
+        </section>
+
+        <!-- Favorites section presents three featured menu items in a card layout -->
+        <section id="menu" class="menu-section">
+
+            <div class="section-heading">
+                <p class="eyebrow">WHAT'S GOOD</p>
+                <h2>Our favorites.</h2>
+            </div>
+
+            <!-- CSS Grid arranges these cards in columns on larger screens and stacks them on smaller screens -->
+            <div class="favorite-cards">
+
+                <!-- Favorite 01: light card style. -->
+                <article class="favorite-card favorite-card-light">
+                    <div class="favorite-image">
+                        <!-- Photo: Brelyn Bashrum, Unsplash. See full source below -->
+                        <img src="images/pizza.jpg"
+                             alt="Cheese pizza topped with fresh basil">
+                    </div>
+
+                    <div class="favorite-content">
+                        <span class="menu-number">01</span>
+                        <h3>Margherita</h3>
+                        <p>Tomato, mozzarella, fresh basil, and olive oil.</p>
+                    </div>
+                </article>
+
+                <!-- Favorite 02: blue card style creates visual contrast. -->
+                <article class="favorite-card favorite-card-blue">
+                    <div class="favorite-image">
+                        <!-- Photo: Brelyn Bashrum, Unsplash. See full source below -->
+                        <img src="images/marinara.jpg"
+                             alt="Red pasta with tomato sauce">
+                    </div>
+
+                    <div class="favorite-content">
+                        <span class="menu-number">02</span>
+                        <h3>Spaghetti Marinara</h3>
+                        <p>Spaghetti tossed with rich tomato and herb sauce.</p>
+                    </div>
+                </article>
+
+                <!-- Favorite 03: repeats the light card style for consistency. -->
+                <article class="favorite-card favorite-card-light">
+                    <div class="favorite-image">
+                        <!-- Photo: Zoran Borojevic, Unsplash. See full source below -->
+                        <img src="images/alfredo.jpg"
+                             alt="Creamy Italian pasta with Parmesan cheese">
+                    </div>
+
+                    <div class="favorite-content">
+                        <span class="menu-number">03</span>
+                        <h3>Fettuccine Alfredo</h3>
+                        <p>Fresh fettuccine with a creamy Parmesan sauce.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="visit" class="visit-section">
+
+            <div class="visit-content">
+                <p class="eyebrow">YOUR TABLE IS WAITING</p>
+
+                <h2 class="visith2">Come hungry.</h2>
+                <p>Good food. Good people. Your neighborhood table.</p>
+
+                <!-- Sends visitors back to the menu until real contact details are available. -->
+                <a href="#menu" class="button button-light">Explore the Menu →</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-logo">LUIGI'S</div>
+
+        <p>Italian Pizza · Pasta · Good Times</p>
+
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#visit">Visit Us</a></li>
+        </ul>
+
+        <p class="copyright">
+            &copy; 2026 Luigi's Italian Restaurant
+        </p>
+
+    </footer>
+
+</body>
+</html>
+
+<!-- 
+Photo Credits:
+
+Hero pizza image
+File: images/Full Pizza.png
+Creator: Saundarya Srinivasan
+Original source URL: https://unsplash.com/photos/pizza-with-green-leaves-on-top-60nzTP7_hMQ
+
+Restaurant interior image
+File: images/restaurant.jpg
+Creator: Daniel Mironov
+Original source URL: https://unsplash.com/photos/modern-restaurant-interior-with-checkered-floor-and-neon-signs-9oKJB32DBpY
+
+Pizza food card
+File: images/pizza.jpg
+Creator: Brelyn Bashrum
+Original source URL: https://unsplash.com/photos/a-slice-of-pizza-with-melted-cheese-being-lifted-RqciGS0ypi0
+
+Marinara food card
+File: images/marinara.jpg
+Creator: Brelyn Bashrum
+Original source URL: https://unsplash.com/photos/penne-pasta-with-creamy-red-sauce-and-black-pepper-rBNBWz5scAA
+
+Alfredo food card
+File: images/alfredo.jpg
+Creator: Zoran Borojevic
+Original source URL: https://unsplash.com/photos/pasta-dish-on-white-ceramic-plate--5FECW242og
+
+-->
